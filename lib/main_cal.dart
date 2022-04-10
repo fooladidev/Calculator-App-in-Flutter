@@ -7,54 +7,74 @@ import 'icon_btn_large.dart';
 
 class MainCal extends StatelessWidget {
   final Function btnOnclick ;
-  const MainCal({Key? key,required this.btnOnclick}) : super(key: key);
+  final Color opColor ;
+  final Color numColor ;
+  final Color btnBgColor ;
+
+  const MainCal({Key? key,required this.btnOnclick, required this.opColor, required this.numColor, required this.btnBgColor}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+      margin: EdgeInsets.only(left: width/30, ),
       width: double.infinity,
-      alignment: Alignment.center,
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Row(
-            children: [
-              Num(text: "AC", color: Colors.red,btnOnClick: btnOnclick,),
-              Num(text: "C", color: Colors.red,btnOnClick: btnOnclick,),
-              IconB(icon: CupertinoIcons.delete_left, color: Colors.black87,btnOnclick: btnOnclick,text: "remove",),
-              IconB(icon: CupertinoIcons.divide, color: Colors.black87,btnOnclick: btnOnclick,text: "divide"),
-            ],
+          Container(
+            margin: EdgeInsets.only(bottom: 12),
+            child: Row(
+              children: [
+                Num(text: "AC", color: opColor,btnOnClick: btnOnclick,bgColor: btnBgColor,),
+                Num(text: "C", color: opColor,btnOnClick: btnOnclick,bgColor: btnBgColor),
+                IconB( icon: CupertinoIcons.delete_left,color: opColor,btnOnclick: btnOnclick,text: "remove",bgColor: btnBgColor),
+                IconB(icon:CupertinoIcons.divide , color: opColor,btnOnclick: btnOnclick,text: "divide",bgColor: btnBgColor),
+              ],
+            ),
           ),
-          Row(
-            children: [
-              Num(text: "7", color: Colors.black87,btnOnClick: btnOnclick),
-              Num(text: "8", color: Colors.black87,btnOnClick: btnOnclick),
-              Num(text: "9", color: Colors.black87,btnOnClick: btnOnclick),
-              IconB(icon: CupertinoIcons.multiply, color: Colors.black87,btnOnclick: btnOnclick,text: "multiply"),
-            ],
+          Container(
+            margin: EdgeInsets.only(bottom: 12),
+            child: Row(
+              children: [
+                Num(text: "7", color: numColor,btnOnClick: btnOnclick,bgColor: btnBgColor),
+                Num(text: "8", color: numColor,btnOnClick: btnOnclick,bgColor: btnBgColor),
+                Num(text: "9", color: numColor,btnOnClick: btnOnclick,bgColor: btnBgColor),
+                IconB(icon:CupertinoIcons.multiply , color: opColor,btnOnclick: btnOnclick,text: "multiply",bgColor: btnBgColor),
+              ],
+            ),
           ),
-          Row(
-            children:  [
-              Num(text: "4", color: Colors.black87,btnOnClick: btnOnclick),
-              Num(text: "5", color: Colors.black87,btnOnClick: btnOnclick),
-              Num(text: "6", color: Colors.black87,btnOnClick: btnOnclick),
-              IconB(icon: CupertinoIcons.minus, color: Colors.black87,btnOnclick: btnOnclick,text: "sub"),
-            ],
+          Container(
+            margin: EdgeInsets.only(bottom: 12),
+            child: Row(
+              children:  [
+                Num(text: "4", color: numColor,btnOnClick: btnOnclick,bgColor: btnBgColor),
+                Num(text: "5", color: numColor,btnOnClick: btnOnclick,bgColor: btnBgColor),
+                Num(text: "6", color: numColor,btnOnClick: btnOnclick,bgColor: btnBgColor),
+                IconB(icon: CupertinoIcons.minus, color: opColor,btnOnclick: btnOnclick,text: "sub",bgColor: btnBgColor),
+              ],
+            ),
           ),
-          Row(
-            children:  [
-              Num(text: "1", color: Colors.black87,btnOnClick: btnOnclick),
-              Num(text: "2", color: Colors.black87,btnOnClick: btnOnclick),
-              Num(text: "3", color: Colors.black87,btnOnClick: btnOnclick),
-              IconB(icon: CupertinoIcons.add, color: Colors.black87,btnOnclick: btnOnclick,text: "add"),
-            ],
+          Container(
+            margin: EdgeInsets.only(bottom: 12),
+            child: Row(
+              children:  [
+                Num(text: "1", color: numColor,btnOnClick: btnOnclick,bgColor: btnBgColor),
+                Num(text: "2", color: numColor,btnOnClick: btnOnclick,bgColor: btnBgColor),
+                Num(text: "3", color: numColor,btnOnClick: btnOnclick,bgColor: btnBgColor),
+                IconB(icon: CupertinoIcons.add, color: opColor,btnOnclick: btnOnclick,text: "add",bgColor: btnBgColor),
+              ],
+            ),
           ),
-          Row(
-            children:  [
-              Num(text: "0", color: Colors.black87,btnOnClick: btnOnclick),
-              Num(text: ".", color: Colors.black87,btnOnClick: btnOnclick),
-              IconBLarge(icon: CupertinoIcons.equal, color: Colors.black87,btnOnclick: btnOnclick,text: "equal",),
-            ],
+          Container(
+
+            child: Row(
+              children:  [
+                Num(text: "0", color: numColor,btnOnClick: btnOnclick,bgColor: btnBgColor),
+                Num(text: ".", color: numColor,btnOnClick: btnOnclick,bgColor: btnBgColor),
+                IconBLarge(icon: CupertinoIcons.equal, color: Colors.white70,btnOnclick: btnOnclick,text: "equal",),
+              ],
+            ),
           ),
         ],
       ),

@@ -13,21 +13,25 @@ class IconBLarge extends StatelessWidget {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     return Container(
+      
+      margin: EdgeInsets.symmetric(horizontal: (width-5)/(3*10)),
 
-      width: 2 * (width-18)/4,
-      height: width/5.5,
+      width: (2 * (width)/6)+(width/15),
+      height: width/6,
 
-      child: OutlinedButton(
+      child: ElevatedButton(
           onPressed: (){
             btnOnclick(text);
           },
 
-          child:Icon(icon,color: color,) ,
+          child:Icon(icon,color: color,size: 28,) ,
           style: TextButton.styleFrom(
-              backgroundColor:const Color(0xFFEFEDED),
+              backgroundColor:const Color(0xFFE87D2D),
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(5.0),
+                
+                borderRadius: BorderRadius.circular(16.0),
               )
+  
           )
       ),
     );
